@@ -270,14 +270,14 @@ const applyCoupon = async (req, res) => {
         console.log(req.body.coupon);
         userdata = await User.findById({ _id: req.session.user_id });
         offerdata = await coupon.findOne({ name: req.body.coupon });
-        console.log('fghdj');
+        // console.log('fghdj');
         if (offerdata) {
-            console.log('p333');
+            // console.log('p333');
             console.log(offerdata.expiryDate, Date.now());
             const date1 = new Date(offerdata.expiryDate);
             const date2 = new Date(Date.now());
             if (date1.getTime() > date2.getTime()) {
-                console.log('p4444');
+                // console.log('p4444');
                 if (offerdata.usedBy.includes(req.session.user_id)) {
                     messag = 'coupon already used'
                     console.log(messag);
@@ -292,6 +292,7 @@ const applyCoupon = async (req, res) => {
                         disc = (offerdata.discount * totalPrice) / 100;
                         if (disc > offerdata.maximumvalue) { disc = offerdata.maximumvalue }
                         console.log(disc);
+                        
                         res.send({ offerdata, disc, state: 1 })
                     } else {
                         messag = 'cannot apply'

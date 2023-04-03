@@ -1,7 +1,7 @@
 <%- include ('../layouts/adminHeader.ejs') %>
 
  
-    <h2 class="text-center my-5 text-success">BANNER MANAGEMENT</h2>
+    <h4 class="text-center my-5 text-success">BANNER MANAGEMENT</h4>
 
     <a href="/admin/add-Banners"><button type="button" class="btn btn-primary mx-3">+ Add Banners</button></a>
 
@@ -27,7 +27,9 @@
             <td>
 
               <% if(banner[i-1].image) { %>
-                <img src="/uploads/<%= banner[i-1].image[0] %>" width="200px" height="100px">
+                <img src="/uploads/<%= banner[i-1].image[0] %>" width="100px" height="100px">
+                <img src="/uploads/<%= banner[i-1].image[1] %>" width="100px" height="100px">
+                <img src="/uploads/<%= banner[i-1].image[2] %>" width="100px" height="100px">
                 <% }else{ %>
                   Image Not Found
                   <% } %>

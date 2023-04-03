@@ -5,11 +5,11 @@
 
 
 
-        <h2 class="text-center my-5 text-success">ADMIN DASHBOARD</h2>
+        <h4 class="text-center my-5 text-success">ADMIN DASHBOARD</h4>
         <div class="container-fluid pt-4 px-4">
             <div class="row g-4">
                 <div class="col-sm-6 col-xl-3">
-                    <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                    <div class="bg-success rounded d-flex align-items-center justify-content-between p-4">
                         <i class="fa fa-chart-line fa-3x text-primary"></i>
                         <div class="ms-3">
                             <p class="mb-2">Today Sale</p>
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-xl-3">
-                    <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                    <div class="bg-success rounded d-flex align-items-center justify-content-between p-4">
                         <i class="fa fa-chart-bar fa-3x text-primary"></i>
                         <div class="ms-3">
                             <p class="mb-2">Sale</p>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-xl-3">
-                    <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                    <div class="bg-success rounded d-flex align-items-center justify-content-between p-4">
                         <i class="fa fa-chart-area fa-3x text-primary"></i>
                         <div class="ms-3">
                             <p class="mb-2">Today Revenue</p>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-xl-3">
-                    <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                    <div class="bg-success rounded d-flex align-items-center justify-content-between p-4">
                         <i class="fa fa-chart-pie fa-3x text-primary"></i>
                         <div class="ms-3">
                             <p class="mb-2">Total Revenue</p>
@@ -50,7 +50,7 @@
         </div>
         <!-- Sale & Revenue End -->
 
-
+<hr>
         <!-- Sales Chart Start -->
         <div style="height: 50vh;">
             <div style=" margin-left:5% ; width: 90%; height: 60vh; background-color: rgb(255, 255, 255) ;">
@@ -69,6 +69,7 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
         </script>
+
         <script>
 
             x = document.getElementById("pds").value;
@@ -107,6 +108,10 @@
                     }
                 }
             });
+
+        </script>
+        
+        <script>
             new Chart("myChart2", {
                 type: "pie",
                 data: {
@@ -116,6 +121,7 @@
                         data: yValue
                     }]
                 },
+                
                 options: {
                     title: {
                         display: true,

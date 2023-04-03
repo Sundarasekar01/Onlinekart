@@ -10,7 +10,7 @@
         <div class="row px-xl-5">
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-30">
-                    <a class="breadcrumb-item text-dark" href="#">Home</a>
+                    <a class="breadcrumb-item text-dark" href="/home">Home</a>
                     <a class="breadcrumb-item text-dark" href="#">Shop</a>
                     <span class="breadcrumb-item active">Shop Detail</span>
                 </nav>
@@ -159,66 +159,82 @@
     <hr>
     <div class="row px-xl-5">
         <div class="col">
-            <h3 class="font-weight-semi-bold">Reviews</h3>
-            <br>
-        <div class="d-flex mb-3">
-          <div class="pe-3">
-            <% if(detail.review){%>
-            <%for(i=0;i<detail.review.length;i++){%>
-              <p class=" text-dark"> <%=detail.review[i].username%>  :  <%=detail.review[i].review%></p>
-              <!-- <a href=""><button type="button" class="btn btn-danger btn-sm">Delete</button></a> -->
+            <div class=" p-30">
+                <div class="nav nav-tabs mb-4">
+                    <a class="nav-item nav-link text-dark active" data-toggle="tab" href="#tab-pane-1">Reviews</a>
+                    <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-2">Related Products</a>
+                </div>
+                <div class="tab-content">
+                    
+                    
+                    <div class="tab-pane fade show active" id="tab-pane-1">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="media mb-4">
+                                    <div class="media-body">
+                                        <%for(i=0;i<detail.review.length;i++){%>
+                                            <h6>
+                                                <%=detail.review[i].username%>
+                                            </h6>
+                                            <p>
+                                                <%=detail.review[i].review%>
+                                            </p>
+                                            
+                                            <%}%>
+                                    </div>
+                                </div>
+                            </div>
 
-              
-              <%}%>
-              <%}else{%>
-                <p class=" text-dark"> No Reviews Found</p>
-                <%}%>
-          </div>
-        </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="tab-pane-2">
+                        <div class="row">
+                            <% for(i=0;i<related.length;i++){%>
+                                        <div class="col-12 col-md-4 mb-4">
+                                            <div class="card h-100">
+                                                <a href="/view-details?id=<%=related[i]._id%>">
+                                                    <img src="/uploads/<%=related[i].image[0]%>" class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <ul class="list-unstyled d-flex justify-content-between">
+                                                        <li>
+                                                            <i class="text-warning fa fa-star"></i>
+                                                            <i class="text-warning fa fa-star"></i>
+                                                            <i class="text-warning fa fa-star"></i>
+                                                            <i class="text-muted fa fa-star"></i>
+                                                            <i class="text-muted fa fa-star"></i>
+                                                        </li>
+                                                        <li class="text-muted text-right">Rs <%=related[i].price%></li>
+                                                    </ul>
+                                                    <a href="/view-details?id=<%=related[i]._id%>" class="h2 text-decoration-none text-dark"> <%=related[i].name%></a>
+                                                    <p class="card-text">
+                                                       
+                                                    </p>
+                                                    
+                                                                                <a href="/addToCart?id=<%=detail._id%>"> <button class="btn btn-primary px-3"><i
+                                                                                    class="fa fa-shopping-cart mr-1"></i> Add To
+                                                                                Cart</button></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                                        <%}%>
+                        
+                                        
+                                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-
-
-
     
-<div class="container-fluid py-5">
-    <h2 class="section-title position-relative  mx-xl-5 mb-4"><span class=" pr-3">You May
-        Also Like</span></h2>
- <div class="row">
-    <% for(i=0;i<related.length;i++){%>
-                <div class="col-12 col-md-4 mb-4">
-                    <div class="card h-100">
-                        <a href="/view-details?id=<%=related[i]._id%>">
-                            <img src="/uploads/<%=related[i].image[0]%>" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body">
-                            <ul class="list-unstyled d-flex justify-content-between">
-                                <li>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                </li>
-                                <li class="text-muted text-right">Rs <%=related[i].price%></li>
-                            </ul>
-                            <a href="/view-details?id=<%=related[i]._id%>" class="h2 text-decoration-none text-dark"> <%=related[i].name%></a>
-                            <p class="card-text">
-                               <%=detail.description%>
-                            </p>
-                            
-                                                        <a href="/addToCart?id=<%=detail._id%>"> <button class="btn btn-primary px-3"><i
-                                                            class="fa fa-shopping-cart mr-1"></i> Add To
-                                                        Cart</button></a>
-                        </div>
-                    </div>
-                </div>
 
-                <%}%>
 
-                
-            </div>
+  
+       
 
 </div>
 

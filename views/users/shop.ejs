@@ -200,11 +200,11 @@
                             </ul>
                             <a href="/view-details?id=<%=product[i]._id%>" class="h2 text-decoration-none text-dark"><%=product[i].name%></a>
                             <p class="card-text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
+                                <%=product[i].description%>
                             </p>
-                            <a class="btn btn-outline-dark btn-square"
-                                                    href="/addWishlist?id=<%=product[i]._id%>"><i
-                                                        class="far fa-heart"></i></a>
+                            
+                    
+                                                       
                         </div>
                     </div>
                 </div>
@@ -305,11 +305,10 @@
                             </ul>
                             <a href="/view-details?id=${productItem._id}" class="h2 text-decoration-none text-dark">${productItem.name}</a>
                             <p class="card-text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
+                                <%=product[i].description%>
                             </p>
-                            <a class="btn btn-outline-dark btn-square"
-                                                    href="/addWishlist?id=${productItem._id}"><i
-                                                        class="far fa-heart"></i></a>
+                            
+                                                        
                         </div>
                     </div>
                 </div>

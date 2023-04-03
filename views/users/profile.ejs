@@ -1,9 +1,21 @@
 <%- include('../layouts/header.ejs') %>
 
 
+<br>
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="/home">Home</a>
+                
+                <span class="breadcrumb-item active">Profile</span>
+            </nav>
+        </div>
+    </div>
+</div>
 
 
-
+<br>
 
 <div class="container">
   <div class="row">
@@ -25,27 +37,27 @@
       <div class="tab-content align-items-stretch" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
           <div class="d-flex justify-content-between">
-            <div class="card" style="width: 16rem;background-color: rgb(213, 214, 216);border-radius:5px;">
+            <div class="card" style="width: 16rem;background-color: rgb(103, 187, 104);border-radius:5px;">
               <div class="card-body ">
-                <h4 class="card-title "><i class="fa-solid fa-wallet"></i> Wallet Balance</h4>
+                <h4 class="card-title "> Wallet Balance</h4>
                 <p class="card-text ">Rs <%-userData.wallet%></p>
               </div>
             </div>
             <div class="card" style="width: 16rem;background-color: rgb(213, 214, 216);border-radius:5px;">
               <div class="card-body ">
-                <h4 class="card-title"><i class="fa-solid fa-cart-shopping"></i> Cart Items</h4>
+                <h4 class="card-title"> Cart Items</h4>
                 <p class="card-text"><%-userData.cart.item.length%></p>
               </div>
             </div>
             <div class="card" style="width: 16rem;background-color: rgb(238, 10, 10);border-radius:5px;">
               <div class="card-body ">
-                <h4 class="card-title text-light"><i class="fa-solid fa-heart"></i> Wishlist items</h4>
+                <h4 class="card-title text-light"> Wishlist items</h4>
                 <p class="card-text text-light"><%-userData.wishlist.item.length%></p>
               </div>
             </div>
           </div>
 
-          <div class="card cart-detail mt-3" style="border-radius: 15px;background-color: rgb(213, 214, 216);">
+          <div class="card cart-detail mt-3" style="border-radius: 15px;background-color: rgb(255, 255, 255);">
             <form action="" style="margin-left: 60px" ; method="" id="form" onsubmit="return onSubmitFunction()">
               <div class="mb-2 row mt-2 pt-5">
                 <input type="hidden" name="id" value="">
@@ -83,6 +95,8 @@
               </div>
             </form>
           </div>
+
+          <br>
         </div>
 
         <div class="tab-pane fade bg-light" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
@@ -126,8 +140,10 @@
 
                           <% } else { %>
                             <a style="display: block;" href="/returnOrder?id=<%=key._id%>"
-                              class="btn btn-danger">return item</a>
-                            <a style="color: blue;" href="/writeReview?id=<%=key._id%>">leave a review</a>
+                              class="btn btn-danger">Return Item</a>
+                              <a style="display: block;" href="/writeReview?id=<%=key._id%>"
+                              class="btn btn-success">Add Review</a>
+                           
                             <% } %>
                               <%} else if(key.status=="cancelled" ){%>
                                 <h6>cancelled</h6>

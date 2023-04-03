@@ -65,9 +65,10 @@
     }
 </style>
 
+<br>
 <!-- Checkout Start -->
 <h5 style="margin-left: 4%; margin-right: 4%;" class="section-title position-relative text-uppercase mb-3"><span
-        class="bg-secondary pr-3">Choose Address</span></h5>
+        class=" pr-3">Choose Address</span></h5>
 <form action="/orderSuccess" method="post">
     <div class="row p-4 rounded container-fluid">
         <% for(i=0;i<address.length;i++){%>
@@ -99,12 +100,13 @@
             </div>
             <%}%>
     </div>
+    <hr>
     <div class="container-fluid">
         <div class="row px-xl-5">
             <div class="col-lg-8">
-                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">New
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class=" pr-3">New
                         Address</span></h5>
-                <div class="bg-black p-30">
+                <div class=" p-30">
                     <div class="row">
 
                         <div class="col-md-12">
@@ -116,8 +118,9 @@
                         </div>
                     </div>
                 </div>
+                <br>
                 <div class=" mb-5" id="shipping-address">
-                    <div class="bg-light tr p-30">
+                    <div class=" tr p-30">
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <label>First Name</label>
@@ -157,18 +160,21 @@
                 </div>
             </div>
             <div class="col-lg-4">
+                <h5 class="section-title position-relative text-uppercase mb-3"><span
+                    class=" pr-3">Coupons</span></h5>
                 <div class="input-group" style="margin-bottom: 20px;">
                     <input name="coupon" id="coupon">
 
-                    <div class="input-group-append">
+                    <div class="input-group-append mt-2">
                         <button type="button" class="btn btn-primary" onclick="apply()">Apply</button>&nbsp; &nbsp;
                         <a data-toggle="modal" class="btn btn-primary" type="button"
                             href="#exampleModalScrollable1">Show Coupons</a>
                     </div>
                 </div>
+                <hr>
                 <h5 class="section-title position-relative text-uppercase mb-3"><span
-                        class="bg-secondary pr-3">Order Total</span></h5>
-                <div class="bg-light p-30 mb-5">
+                        class=" pr-3">Order Total</span></h5>
+                <div class=" p-30 mb-5">
 
                     <div class="border-bottom">
                         <h6 style="color: red;" id="msg"></h6>
@@ -215,12 +221,13 @@
                         </div>
                     </div>
                 </div>
+                <hr>
                 <div class="mb-5">
 
-                    <div class="bg-light p-30 mb-4">
+                    <div class=" p-30 mb-4">
                         <div class="form-group">
                             <div class="custom-control custom-radio">
-                                <h6><i class="fa-solid fa-wallet"></i> &nbsp;&nbsp; Wallet Balance</h6>
+                                <h6> &nbsp;&nbsp; Wallet Balance</h6>
                                 <input type="checkbox" class="custom-control-input" onchange="val('<%=wallet%>')"
                                     name="payment" id="wallet" value="wallet">
                                 <label class="custom-control-label" for="wallet">Rs <%=wallet%></label>
@@ -231,9 +238,10 @@
                             </div>
                         </div>
                     </div>
+                    <hr>
                     <h5 class="section-title position-relative text-uppercase mb-3"><span
-                            class="bg-secondary pr-3">Payment</span></h5>
-                    <div class="bg-light p-30">
+                            class=" pr-3">Payment</span></h5>
+                    <div class=" p-30">
                         <div class="form-group">
                             <div class="custom-control custom-radio">
                                 <input type="radio" class="custom-control-input " name="payment" id="COD"
