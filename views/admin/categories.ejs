@@ -28,7 +28,7 @@
                   class="btn btn-success">edit</button></a>
               <!-- <button class="btn  btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter"
                     onclick="del('<%- category[i-1]._id %>')"></button> -->
-              <a id="<%-category[i-1]._id %>" style="text-decoration: none; color: #ffff;"
+              <a id="<%-category[i-1]._id %>" style="text-decoration: none; color: #d15858;"
                 href="/admin/delete-category?id=<%- category[i-1]._id %>">
                 <% if(category[i-1].is_available){ %>Unlist<%}else{%>list<%}%>
               </a>
