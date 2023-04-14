@@ -94,7 +94,7 @@
                   <input type="number" class="form-control" id="otpInput" name="otp" required>
                   <span id="timer" style="display: none;"></span>
                   <input type="hidden" name="mobilenumber" value="<%-mobno%>">
-                  <button type="button" class="btn btn-info ms-2" id="resendBtn"
+                  <button type="button" class="btn btn-dark ms-2" id="resendBtn"
                     onclick="startTimer(60);">Resend</button>
                 </div>
                 <span class="form-text text-muted" id="timer"></span>
@@ -137,7 +137,7 @@
 
     function startTimer(duration) {
       console.log('<%=mobno%>');
-      console.log("asdfasf");
+    
       $.ajax({
         url: '/againotp',
         type: 'POST',
